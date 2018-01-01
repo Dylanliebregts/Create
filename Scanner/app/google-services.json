@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "713037356330",
+    "firebase_url": "https://socialmediaapp-5c4a3.firebaseio.com",
+    "project_id": "socialmediaapp-5c4a3",
+    "storage_bucket": "socialmediaapp-5c4a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713037356330:android:17d07361a3875517",
+        "android_client_info": {
+          "package_name": "com.example.dlieb.scanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713037356330-rqvpifvl7fmthgi6vecnr5k772pdie5p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dlieb.scanner",
+            "certificate_hash": "39e0d8055f880c0b8c09ac73e24b16ae7ba58c2c"
+          }
+        },
+        {
+          "client_id": "713037356330-jrn5qpt357pfh0hssnkm3nu7p7vr9rnn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPSapDwMBKQxpqCi2SB4vpL4GNNrQKzTU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713037356330-jrn5qpt357pfh0hssnkm3nu7p7vr9rnn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
