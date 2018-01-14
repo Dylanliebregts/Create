@@ -28,15 +28,13 @@ import com.google.firebase.storage.UploadTask;
 import java.io.IOException;
 import java.net.URI;
 import java.util.UUID;
-
+//Upload class
 public class HomeActivity extends AppCompatActivity {
 
     //Variables
     private Button btnChoose, btnUpload;
     private ImageView imageView;
-
     private Uri filePath;
-
     private final int PICK_IMAGE_REQUEST = 71;
 
     //Firebase
@@ -46,13 +44,13 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home); //layout van de activity_main xml
 
         //Firebase Init
         storage = FirebaseStorage.getInstance();
         storageReference = storage.getReference();
 
-        //Init view
+        //Init view (from xml)
         btnChoose = (Button)findViewById(R.id.btnChoose);
         btnUpload = (Button)findViewById(R.id.btnUpload);
         imageView = (ImageView)findViewById(R.id.imgView);

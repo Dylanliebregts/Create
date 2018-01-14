@@ -29,12 +29,14 @@ import java.io.IOException;
 
 public class Upload extends AppCompatActivity {
 
+    //variables
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
     private ImageView imageView;
     private EditText txtImageName;
     private Uri imgUri;
 
+    // variables for database
     public static final String FB_STORAGE_PATH = "image/";
     public static final String FB_DATABASE_PATH = "image";
     public static final int REQUEST_CODE = 1234;
@@ -44,20 +46,26 @@ public class Upload extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload);
+
+        //Firebase Init
         mStorageRef = FirebaseStorage.getInstance().getReference();
         mDatabaseRef = FirebaseDatabase.getInstance().getReference(FB_DATABASE_PATH);
 
+        //Init view (from xml)
         imageView = (ImageView) findViewById(R.id.imageView);
         txtImageName = (EditText) findViewById(R.id.txtImageName);
     }
 
+    //button to choose an image to upload
     public void btnBrowse_Click(View V){
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("image/*");  //every image type can be chosen (png, jpg, etc)
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select image"), REQUEST_CODE);
     }
 
+
+    //get image on screen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -89,7 +97,6 @@ public class Upload extends AppCompatActivity {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading image");
             progressDialog.show();
-
             //Get the storage reference
             StorageReference ref = mStorageRef.child(FB_STORAGE_PATH + System.currentTimeMillis() + "."+getImagesExt(imgUri));
 
@@ -106,7 +113,7 @@ public class Upload extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Image uploaded", Toast.LENGTH_SHORT).show();
                     ImageUpload imageUpload = new ImageUpload(txtImageName.getText().toString(),taskSnapshot.getDownloadUrl().toString());
 
-                    //Savee image info into firebase database
+                    //Save image info into firebase database
                     String uploadId = mDatabaseRef.push().getKey();
                     mDatabaseRef.child(uploadId).setValue(imageUpload);
 
@@ -135,14 +142,32 @@ public class Upload extends AppCompatActivity {
                     });
 
         }
-        else {
+        else {//if the user doesn't select an immage display this message
             Toast.makeText(getApplicationContext(), "Please select an image", Toast.LENGTH_SHORT).show();
         }
     }
 
-    //extra
+    //extra bottom menu
 
     public void btnShowlistImage_Click(View v) {
+        Intent i = new Intent(Upload.this, ImageListActivity.class);
+        startActivity(i);
+    }
+
+    public void btnHome_Click(View v)
+    {
+        Intent i = new Intent(Upload.this, Menu.class);
+        startActivity(i);
+    }
+
+    public void btnUpload2_Click(View v)
+    {
+        Intent i = new Intent(Upload.this, Upload.class);
+        startActivity(i);
+    }
+
+    public void btnGallery_Click(View v)
+    {
         Intent i = new Intent(Upload.this, ImageListActivity.class);
         startActivity(i);
     }

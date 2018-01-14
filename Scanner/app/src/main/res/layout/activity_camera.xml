@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context="com.example.dlieb.scanner.Camera"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    >
 
-    <ListView
-        android:id="@+id/listViewImage"
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Take picture"
+        android:id="@+id/button"
+        android:background="@drawable/colorbutton"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"/>
 
-        android:layout_height="423dp"
-        android:background="@color/colorPrimary" />
-
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:id="@+id/image_view"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -46,8 +59,5 @@
 
             android:text="Upload" />
     </TableRow>
-
-
-
 
 </LinearLayout>

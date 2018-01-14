@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="com.example.dlieb.scanner.Upload">
 
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Browse image to upload"
-        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/colorbutton"
         android:textColor="@color/colorWhite"
         android:onClick="btnBrowse_Click"/>
 
@@ -26,25 +28,53 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtImageName"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
         android:hint="Give your creation a name!"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="Upload image"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="3dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/colorbutton"
         android:textColor="@color/colorWhite"
         android:onClick="btnUpload_Click"/>
 
-    <Button
-        android:layout_width="match_parent"
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Show list"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorWhite"
-        android:onClick="btnShowlistImage_Click"/>
+        android:gravity="center_horizontal"
+        android:layout_marginTop="15dp">
+        <Button
+            android:onClick="btnHome_Click"
+            android:background="@drawable/colorbutton"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Home" />
+        <Button
+            android:onClick="btnGallery_Click"
+            android:background="@drawable/colorbutton"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="Gallery" />
 
+        <Button
+            android:onClick="btnUpload2_Click"
+            android:background="@drawable/colorbutton"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Upload" />
+    </TableRow>
 
 
 </LinearLayout>

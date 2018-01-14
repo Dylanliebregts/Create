@@ -27,6 +27,7 @@ public class ImageListAdapter extends ArrayAdapter<ImageUpload> {
     private List<ImageUpload> listImage;
 
 
+
     public ImageListAdapter(@NonNull Activity context, int resource, @NonNull List<ImageUpload> objects) {
         super(context, resource, objects);
         this.context = context;
@@ -34,12 +35,13 @@ public class ImageListAdapter extends ArrayAdapter<ImageUpload> {
         listImage = objects;
     }
 
-    @NonNull
+    //Getting image and text on my screen
+    @NonNull //parameter can never be 0
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
 
-        View v = inflater.inflate(resource, null);
+        View v = inflater.inflate(resource, null); //inflater is support for PNG graphics.
         TextView tvName = v.findViewById(tvImageName);
         ImageView img = v.findViewById(R.id.imgView);
 
